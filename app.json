@@ -11,12 +11,21 @@
     "ios": {
       "supportsTablet": true
     },
+    "update": {
+      "enables": false,
+      "checkAutomatically": "ON_ERROR_RECOVERY",
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.adamanaemam.adamnaeman"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +46,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "abb29472-776c-4b03-8abf-3a309db59628"
+      }
     }
   }
 }
