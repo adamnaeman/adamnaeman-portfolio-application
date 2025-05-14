@@ -11,11 +11,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "update": {
-      "enables": false,
-      "checkAutomatically": "ON_ERROR_RECOVERY",
-      "fallbackToCacheTimeout": 0
-    },
+    
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -52,6 +48,12 @@
       "eas": {
         "projectId": "abb29472-776c-4b03-8abf-3a309db59628"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/abb29472-776c-4b03-8abf-3a309db59628"
     }
   }
 }
