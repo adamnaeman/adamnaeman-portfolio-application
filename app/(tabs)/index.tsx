@@ -1,73 +1,72 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import ParallaxScrollView from '@/components/ParallaxScrollView';
+import { Portfolio } from '@/components/Portfolio';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import TopicButtons from '@/components/TopicButton';
+
 
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
+      headerBackgroundColor={{ light: '#A1CEDC', dark: '#000000' }}
+      headerImage={ 
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+          source={require('@/assets/images/adamnaeman-profile-1.jpg')}
+          style={styles.profileBanner}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome, Adam</ThemedText>
+      }
+      >
+      <Image
+          source={require('@/assets/images/adamnaeman-profile-1.jpg')}
+          style={styles.profileLogo}
+        />
+      <ThemedView style={styles.header}>
+        <ThemedText type="title" >Adamnaeman</ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
+      <TopicButtons/>
+      <Portfolio/>
+      <Portfolio/>
     </ParallaxScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  header: {
+    alignSelf: 'center'
+  },
   titleContainer: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
   },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
+  profileBanner: {
+    height: 300,
+    width: 390,
     bottom: 0,
     left: 0,
-    position: 'absolute',
+    alignSelf: 'center',
   },
+  profileLogo: {
+    height: 100, 
+    width: 100, 
+    alignSelf: 'center', 
+    borderRadius: 100, 
+    borderWidth: 3, 
+    borderColor: '#fff'
+  },
+  buttonTopic: {
+    alignSelf: 'center',
+    backgroundColor: '#111100',
+    padding: 5,
+    paddingHorizontal: 15,
+    margin: 10,
+    borderRadius: 10
+  }
 });
